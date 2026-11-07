@@ -36,8 +36,17 @@ Egasi: Sanjar. U bilan faqat **o'zbek kirill** yozuvida gaplashiladi. Videodagi 
    (`make.py` dan: W,H,LIME,WHITE,GREY,RED, font, glow_text, text_c, base, render). Har abzats = 1 sahna.
    Avval `stills` rejimida kadrlarni ko'ring (matn chetga chiqmasin!), keyin render.
    Shriftlar: /usr/share/fonts/opentype/inter/ (Inter).
-7. **Musiqa va yig'ish.** `python3 music2.py music.wav TOTAL whoosh_vaqtlari pop_vaqtlari`;
-   ffmpeg: video + voice_c.wav (volume 1.6) + music (volume 0.22), amix normalize=0, alimiter.
+7. **Musiqa va yig'ish — HAQIQIY MUSIQA (Sanjar talabi: sintez "tng-tng" emas!).**
+   `music/` papkasidagi Pixabay treklaridan mavzuga mosini tanlang (Pixabay Content License: Instagram'da
+   bepul, mualliflik da'vosi yo'q, atributsiya shart emas):
+   motiv_1/motiv_3 — energik (omonat, daromad, "qanday qilish"); tension_1/tension_2 — xavf, yo'qotish,
+   qarz, firibgarlik, minusli hook; chill_1/chill_3 — byudjet, odatlar; inspire_1/inspire_2 — uzoq muddat,
+   investitsiya, murakkab foiz; news_1/news_2 — kurs/stavka/qonun yangiliklari.
+   Ketma-ket ikki kun bir xil trekni ishlatmang (topics.md ga trek nomini yozing).
+   `python3 mix.py video.mp4 voice_c.wav music/<trek>.mp3 out.mp4` (ovozsizda `none`). Musiqa ovoz ostida
+   avtomatik pasayadi (ducking). Ixtiyoriy: `music2.py` dan faqat whoosh SFX (5-argument), juda past.
+   Mashhur qo'shiqlarni (Spotify/YouTube hitlari) HECH QACHON qo'ymang — Instagram ovozni o'chiradi yoki
+   videoni bloklaydi. Yangi trek kerak bo'lsa — faqat pixabay.com/music (kompyuter ulangan run'da brauser orqali).
    1080x1920, 30fps, libx264 crf18 veryfast, aac 192k.
 8. **Yuklash.** Video → shu repo `anlyz-reels` branch, `reels/anlyz_YYYYMMDD.mp4`, push.
    Raw URL: `https://raw.githubusercontent.com/sanjarberdiyevv/data-analitika-/anlyz-reels/reels/anlyz_YYYYMMDD.mp4`
