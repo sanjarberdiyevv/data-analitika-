@@ -12,12 +12,13 @@ Egasi: Sanjar. U bilan faqat **o'zbek kirill** yozuvida gaplashiladi. Videodagi 
 3. **Ssenariy** (o'zbek lotin, 6–8 abzats, 35–50 s): 1-abzats — kuchli hook (shaxsiy pulga tegadigan aniq raqam,
    1–2 soniyada). Oxirgi abzats — CTA ("Saqlab qo'ying / do'stingizga yuboring / izohda yozing").
    Sonlarni so'z bilan yozing ("o'n sakkiz foiz"). Vergul kamroq — har vergul pauza beradi.
-4. **ASOSIY REJIM (2026-11-07 dan): OVOZSIZ, to'liq bulutda.** Vazifa kompyutersiz ishlaydi — Narakeet/brauser
-   ishlatilmaydi. Video: kuchli matn animatsiyasi + musiqa + SFX. Har sahna ekranda o'qishga yetadigan vaqt
-   (~2,5 s + 0,08 s/belgi, 2,5–5 s), jami 25–40 s. 1-sahna (hook) ≤2,5 s, katta raqam darhol ko'rinsin.
-   Sahna davomiyliklarini o'zingiz belgilang (comp.py kerak emas); music2.py ga sahna boshlari = whoosh.
-   Matn ovozsiz ham tushunarli bo'lsin: har sahnada 1 asosiy fikr, katta yozuv.
-   (Quyidagi Narakeet yo'li faqat Sanjar alohida so'rasa va kompyuter ulangan sessiyada.)
+4. **IKKI REJIM.**
+   - **A) Ovozli (kompyuter ulangan run, 18:08):** pastdagi Narakeet yo'li. Bu ASOSIY rejim.
+   - **B) Ovozsiz zaxira (bulutli run, 19:30):** avval `topics.md` ni tekshiring — bugungi sana bilan qator bo'lsa
+     (ovozli run ishlagan), HECH NARSA QILMANG, faqat to'xtang. Bo'lmasa — ovozsiz video: matn animatsiyasi +
+     musiqa + SFX, har sahna ~2,5 s + 0,08 s/belgi (2,5–5 s), jami 25–40 s, hook ≤2,5 s; comp.py kerak emas.
+     Joylash vaqti: hozirdan ≥15 daqiqa keyin (20:00 o'tib ketgan bo'lsa — darhol +15 daq).
+   - Ovozli run'da Narakeet limiti tugasa yoki brauser ishlamasa → shu run'da ovozsiz variantni qiling.
    **Ovoz — Narakeet (captchasiz)**, built-in browser:
    `https://www.narakeet.com/languages/uzbek-text-to-speech/` → `#trynow` ichida select[name=voice]=`shavkat`,
    select[name=format]=`mp3`, textarea[name=unparsedScript]=ssenariy, input[name=generateaudio].click().
