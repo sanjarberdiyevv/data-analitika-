@@ -34,12 +34,15 @@ Egasi: Sanjar. U bilan faqat **o'zbek kirill** yozuvida gaplashiladi. Videodagi 
    1080x1920, 30fps, libx264 crf18 veryfast, aac 192k.
 8. **Yuklash.** Video → shu repo `anlyz-reels` branch, `reels/anlyz_YYYYMMDD.mp4`, push.
    Raw URL: `https://raw.githubusercontent.com/sanjarberdiyevv/data-analitika-/anlyz-reels/reels/anlyz_YYYYMMDD.mp4`
-9. **Instagram (built-in browser, sessiya ochiq).** instagram.com → "Создать"(+) → "Публикация" →
-   modal ochilganda JS bilan: raw URL ni fetch → `new File([blob],'reel.mp4',{type:'video/mp4'})` →
-   DataTransfer → `input[type=file]` (accept video) `.files = dt.files` + `change` event.
-   Fayl dialogi ochilmasin (tugmani bosmang, inputga to'g'ridan-to'g'ri bering).
-   Обрезать: "Оригинал" nisbatini tanlang → Далее → muqovaga hook kadri → Далее → caption → "Поделиться".
-   "Видео Reels опубликовано" chiqqanini tekshiring.
+9. **Instagram — 1-yo'l: Metricool (to'liq avtomat).** `getBrandSettings` → Instagram ulangan bo'lsa
+   `createScheduledPost`: blogId, date = bugun 20:00 Asia/Tashkent, info: providers [{network:"instagram"}],
+   instagramData {type:"REEL", showReelOnFeed:true}, media [raw URL], videoCoverMilliseconds = hook kadri (~3000),
+   text = caption, autoPublish true. Natijadagi plannerUrl ni hisobotga qo'shing.
+   **2-yo'l (Metricool'da Instagram ulanmagan bo'lsa):** Instagram CSP raw.githubusercontent'dan fetch'ni
+   bloklaydi, shuning uchun JS bilan faylni bera olmaysiz. Videoni `device_commit_files` bilan
+   `Downloads\anlyz_YYYYMMDD.mp4` ga yozing, instagram.com → "+" → "Выбрать на компьютере" bosing va
+   Sanjardan faylni tanlashni so'rang (Ctrl+Shift+B). Keyin: "Оригинал" nisbat → Далее → muqova hook kadri →
+   Далее → caption → "Поделиться" → "Видео Reels опубликовано" ni tekshiring.
 10. **Caption:** hook qatori, 3–4 qator asosiy raqamlar, 🧮 formula, 📌 CTA, 💬 savol, Manba, 5 ta heshteg
     (#moliyaviysavodxonlik #analitika #anlyzuz + 2 ta mavzuga oid).
 11. **Log.** `topics.md` ga sana | mavzu | hook | asosiy raqamlar | manba qatorini qo'shing, push.
