@@ -7,18 +7,29 @@ ALWAYS check the printed groups make sense against the script.
 """
 import subprocess, json, re, sys
 
-src, NP = sys.argv[1], int(sys.argv[2])
+src, NPARG = sys.argv[1], sys.argv[2]
+# NPARG: either number of paragraphs (TTSMaker: paragraph gaps ~0.76s) or comma list of sentences per
+# paragraph, e.g. "2,3,3,2,2,5,3" (Narakeet: every sentence gap ~1s, so paragraphs are defined by counts)
+COUNTS = [int(x) for x in NPARG.split(",")] if "," in NPARG else None
+NP = len(COUNTS) if COUNTS else int(NPARG)
 TEMPO = float(sys.argv[3]) if len(sys.argv) > 3 else 1.12
 END = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", src]).decode())
 log = subprocess.run(["ffmpeg", "-i", src, "-af", "silencedetect=noise=-38dB:d=0.5", "-f", "null", "-"], capture_output=True, text=True).stderr
 st = [float(x) for x in re.findall(r"silence_start: ([0-9.]+)", log)]
 en = [float(x) for x in re.findall(r"silence_end: ([0-9.]+)", log)]
 gaps = [(a, b) for a, b in zip(st, en) if b < END - 0.05]
-para = set(sorted(gaps, key=lambda g: abs((g[1] - g[0]) - 0.76))[: NP - 1])
+if COUNTS:
+    gaps = gaps[: sum(COUNTS) - 1]
+    idx, acc = set(), 0
+    for c in COUNTS[:-1]:
+        acc += c; idx.add(acc - 1)
+    para = {g for i, g in enumerate(gaps) if i in idx}
+else:
+    para = set(sorted(gaps, key=lambda g: abs((g[1] - g[0]) - 0.76))[: NP - 1])
 segs, s = [], 0.0
 for a, b in gaps:
     segs.append((s, a + 0.08)); s = b - 0.08
-segs.append((s, END))
+segs.append((s, END if not COUNTS else min(END, s + 30)))
 parts, t, onsets, pbreak = [], 0.0, [], []
 for i, (a, b) in enumerate(segs):
     onsets.append(t); t += b - a

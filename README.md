@@ -24,12 +24,12 @@ Egasi: Sanjar. U bilan faqat **o'zbek kirill** yozuvida gaplashiladi. Videodagi 
    select[name=format]=`mp3`, textarea[name=unparsedScript]=ssenariy, input[name=generateaudio].click().
    Sahifa `/app/text-to-audio/?projectId=...` ga o'tadi; ~15 s kuting; "DOWNLOAD" havolasini JS bilan
    `fetch` qilib blob qiling va `<a download="anlyz_voice_YYYYMMDD.mp3">` orqali yuklab oling.
-   Fayl `C:\Users\SanjarBerdiyevv\Downloads\` ga tushadi (ba'zan `*.tmp` nomi bilan — eng yangi mtime faylini oling),
+   Fayl `C:\Users\SanjarBerdiyevv\Downloads\` ga tushadi (brauser «Saqlash» oynasini ochadi, lekin fayl to'liq `*.tmp` nomi bilan tushadi — eng yangi mtime'li .tmp ni o'lchami bo'yicha tekshirib stage qiling; Sanjardan hech narsa so'ramang),
    `device_stage_files` bilan workspace'ga oling.
    **Bepul limit ~12 ta.** Agar Narakeet "limit/paid plan" desa → OVOZSIZ variant: matn+animatsiya+musiqa,
    sahnalar uzunligini o'qish tezligiga qarab qo'ying (~2,5–4 s/sahna). Sanjarga xabar bering.
 5. **Vaqtlar.** Abzatslar orasida pauza bo'lishi uchun ssenariyda abzatslarni bo'sh qator bilan ajrating.
-   `python3 comp.py voice.mp3 N_ABZATS` → voice_c.wav + timing.json (guruhlar = abzatslar, ichida gap boshlanishlari).
+   `python3 comp.py voice.mp3 N_ABZATS` (TTSMaker) yoki `python3 comp.py voice.mp3 2,3,3,2,2,5,3` (Narakeet: har abzatsdagi gaplar soni — Narakeet har gapdan keyin ~1 s pauza qiladi) → voice_c.wav + timing.json (guruhlar = abzatslar, ichida gap boshlanishlari).
    Narakeet pauzalari TTSMaker'dan farq qiladi — chiqqan guruhlar ssenariyga mos kelishini TEKSHIRING,
    kerak bo'lsa silencedetect natijasiga qarab qo'lda belgilang.
 6. **Sahnalar.** `example_scenes_inflyatsiya.py` andozasi bo'yicha yangi `scenes_YYYYMMDD.py` yozing
