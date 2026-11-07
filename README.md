@@ -12,7 +12,13 @@ Egasi: Sanjar. U bilan faqat **o'zbek kirill** yozuvida gaplashiladi. Videodagi 
 3. **Ssenariy** (o'zbek lotin, 6–8 abzats, 35–50 s): 1-abzats — kuchli hook (shaxsiy pulga tegadigan aniq raqam,
    1–2 soniyada). Oxirgi abzats — CTA ("Saqlab qo'ying / do'stingizga yuboring / izohda yozing").
    Sonlarni so'z bilan yozing ("o'n sakkiz foiz"). Vergul kamroq — har vergul pauza beradi.
-4. **Ovoz — Narakeet (captchasiz)**, built-in browser:
+4. **ASOSIY REJIM (2026-11-07 dan): OVOZSIZ, to'liq bulutda.** Vazifa kompyutersiz ishlaydi — Narakeet/brauser
+   ishlatilmaydi. Video: kuchli matn animatsiyasi + musiqa + SFX. Har sahna ekranda o'qishga yetadigan vaqt
+   (~2,5 s + 0,08 s/belgi, 2,5–5 s), jami 25–40 s. 1-sahna (hook) ≤2,5 s, katta raqam darhol ko'rinsin.
+   Sahna davomiyliklarini o'zingiz belgilang (comp.py kerak emas); music2.py ga sahna boshlari = whoosh.
+   Matn ovozsiz ham tushunarli bo'lsin: har sahnada 1 asosiy fikr, katta yozuv.
+   (Quyidagi Narakeet yo'li faqat Sanjar alohida so'rasa va kompyuter ulangan sessiyada.)
+   **Ovoz — Narakeet (captchasiz)**, built-in browser:
    `https://www.narakeet.com/languages/uzbek-text-to-speech/` → `#trynow` ichida select[name=voice]=`shavkat`,
    select[name=format]=`mp3`, textarea[name=unparsedScript]=ssenariy, input[name=generateaudio].click().
    Sahifa `/app/text-to-audio/?projectId=...` ga o'tadi; ~15 s kuting; "DOWNLOAD" havolasini JS bilan
@@ -38,7 +44,10 @@ Egasi: Sanjar. U bilan faqat **o'zbek kirill** yozuvida gaplashiladi. Videodagi 
    `createScheduledPost`: blogId, date = bugun 20:00 Asia/Tashkent, info: providers [{network:"instagram"}],
    instagramData {type:"REEL", showReelOnFeed:true}, media [raw URL], videoCoverMilliseconds = hook kadri (~3000),
    text = caption, autoPublish true. Natijadagi plannerUrl ni hisobotga qo'shing.
-   **2-yo'l (Metricool'da Instagram ulanmagan bo'lsa):** Instagram CSP raw.githubusercontent'dan fetch'ni
+   **Bulutli run'da Metricool ulanmagan bo'lsa:** videoni push qiling va Sanjarga raw havolani yuborib,
+   "Metricool'ga Instagram'ni ulang (app.metricool.com/brands/connections?blogId=7556886), shunda o'zi joylanadi"
+   deb yozing. Kompyuter talab qilmang.
+   **2-yo'l (faqat kompyuter ulangan sessiyada, Metricool'da Instagram ulanmagan bo'lsa):** Instagram CSP raw.githubusercontent'dan fetch'ni
    bloklaydi, shuning uchun JS bilan faylni bera olmaysiz. Videoni `device_commit_files` bilan
    `Downloads\anlyz_YYYYMMDD.mp4` ga yozing, instagram.com → "+" → "Выбрать на компьютере" bosing va
    Sanjardan faylni tanlashni so'rang (Ctrl+Shift+B). Keyin: "Оригинал" nisbat → Далее → muqova hook kadri →
