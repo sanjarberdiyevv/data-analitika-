@@ -9,7 +9,10 @@ Egasi: Sanjar. U bilan faqat **o'zbek kirill** yozuvida gaplashiladi. Videodagi 
    Mavzu "o'rgatadigan" bo'lsin: aniq hisob + tez formula/qoida. Oddiy fakt (kofe narxi, 50%+50%) — rad etilgan.
 2. **Ma'lumot.** WebSearch bilan rasmiy manba (Markaziy bank cbu.uz, Statistika qo'mitasi stat.uz, banklar).
    Har bir raqamni tekshiring, hisob-kitobni python bilan qiling. Ekranga manba + sana yozing.
-3. **Ssenariy** (o'zbek lotin, 6–8 abzats, 35–50 s): 1-abzats — kuchli hook (shaxsiy pulga tegadigan aniq raqam,
+3. **Ssenariy** (o'zbek lotin, 4–5 abzats, **25–35 s — 08.11 statistikasidan keyin QAT'IY**):
+   08.11 natija: o'rtacha tomosha 10 s, 3-soniyada qolganlar 39–51%, saqlash/ulashish 0 → videolar uzun.
+   Asosiy raqam 1-soniyada ekranda bo'lsin, kirish so'zlarisiz. Formula/qoida 15-soniyagacha chiqsin.
+   Bitta video = bitta fikr (bonus/72-qoidasi kabi qo'shimchalar alohida videoga). 1-abzats — kuchli hook (shaxsiy pulga tegadigan aniq raqam,
    1–2 soniyada). Oxirgi abzats — CTA ("Saqlab qo'ying / do'stingizga yuboring / izohda yozing").
    Sonlarni so'z bilan yozing ("o'n sakkiz foiz"). Vergul kamroq — har vergul pauza beradi.
 4. **IKKI REJIM.**
