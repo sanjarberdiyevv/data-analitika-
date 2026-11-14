@@ -9,12 +9,23 @@ Egasi: Sanjar. U bilan faqat **o'zbek kirill** yozuvida gaplashiladi. Videodagi 
    Mavzu "o'rgatadigan" bo'lsin: aniq hisob + tez formula/qoida. Oddiy fakt (kofe narxi, 50%+50%) — rad etilgan.
 2. **Ma'lumot.** WebSearch bilan rasmiy manba (Markaziy bank cbu.uz, Statistika qo'mitasi stat.uz, banklar).
    Har bir raqamni tekshiring, hisob-kitobni python bilan qiling. Ekranga manba + sana yozing.
-3. **Ssenariy** (o'zbek lotin, 4–5 abzats, **25–35 s — 08.11 statistikasidan keyin QAT'IY**):
-   08.11 natija: o'rtacha tomosha 10 s, 3-soniyada qolganlar 39–51%, saqlash/ulashish 0 → videolar uzun.
-   Asosiy raqam 1-soniyada ekranda bo'lsin, kirish so'zlarisiz. Formula/qoida 15-soniyagacha chiqsin.
-   Bitta video = bitta fikr (bonus/72-qoidasi kabi qo'shimchalar alohida videoga). 1-abzats — kuchli hook (shaxsiy pulga tegadigan aniq raqam,
-   1–2 soniyada). Oxirgi abzats — CTA ("Saqlab qo'ying / do'stingizga yuboring / izohda yozing").
-   Sonlarni so'z bilan yozing ("o'n sakkiz foiz"). Vergul kamroq — har vergul pauza beradi.
+3. **Ssenariy — FORMAT «KUTILGAN vs HAQIQAT» (Sanjar tanlovi, 14.11.2026; 15.11 dan majburiy).**
+   Sabab (Metricool, 07–13.11): har video ~110 qamrovda to'xtaydi, 3 s ichida 46–70% o'tkazib yuboradi,
+   o'rtacha tomosha 5–10 s, saqlash 0. Eng uzoq tomosha qilinganlar — savol/jumboqli videolar (17–20 s).
+   Ohang: JIDDIY, tushuntiruvchi; yengil kinoya mumkin, so'kinish/haqorat YO'Q. Uzunligi **18–25 s**, 5 abzats:
+   - **A Kutilgan (0–2,5 s):** keng tarqalgan ishonch, odamning o'z gapi bilan. Kichik, shaxsiy summa
+     (oylik 5 mln, telefon 10 mln, kredit 20–50 mln — 100+ mln emas). Ekranda «KUTILGAN» yorlig'i (kulrang/oq).
+     Masalan: "Kutilgan: nasiya — oyiga atigi 1,2 mln, arzimas narsa."
+   - **B Haqiqat (2,5–6 s):** «HAQIQAT» yorlig'i (qizil), katta raqam — keskin o'tish (zoom/silkinish).
+     "Haqiqat: 12 oyda 4 mln ortiqcha to'laysiz."
+   - **C Nega (6–14 s):** 1–2 qisqa gap bilan sababini tushuntiring + oddiy vizual (ustun, chiziq, taqqoslash).
+   - **D Qoida (14–20 s):** bitta eslab qolinadigan qoida/formula ("ustama × 1,7", "muddatni qisqartiring").
+   - **E CTA (oxirgi 2–3 s):** "Shunday do'stingizni belgilang" yoki "Saqlab qo'ying". Izohda savol.
+   Bitta video = bitta fikr. Sonlarni ssenariyda so'z bilan yozing. Vergul kamroq.
+   Caption 1-qatori ham shu format: "Kutilgan: … / Haqiqat: …".
+   Mavzu g'oyalari: nasiya/Uzum nasiya, kredit karta, erta to'lash, omonat foizi va inflyatsiya, maoshdan soliq,
+   ijara vs ipoteka, to'y xarajati (rasmiy ma'lumot bo'lsa), valyuta ayirboshlash spredi, "0% muddatli to'lov".
+   Avvalgi mavzularni yangi formatda qayta ishlash MUMKIN (topics.md da "qayta: <sana>" deb yozing).
 4. **IKKI REJIM.**
    - **A) Ovozli (kompyuter ulangan run, 18:08):** pastdagi Narakeet yo'li. Bu ASOSIY rejim.
    - **B) Ovozsiz zaxira (bulutli run, 19:30):** avval `topics.md` ni tekshiring — bugungi sana bilan qator bo'lsa
@@ -35,7 +46,7 @@ Egasi: Sanjar. U bilan faqat **o'zbek kirill** yozuvida gaplashiladi. Videodagi 
    `python3 comp.py voice.mp3 N_ABZATS` (TTSMaker) yoki `python3 comp.py voice.mp3 2,3,3,2,2,5,3` (Narakeet: har abzatsdagi gaplar soni — Narakeet har gapdan keyin ~1 s pauza qiladi) → voice_c.wav + timing.json (guruhlar = abzatslar, ichida gap boshlanishlari).
    Narakeet pauzalari TTSMaker'dan farq qiladi — chiqqan guruhlar ssenariyga mos kelishini TEKSHIRING,
    kerak bo'lsa silencedetect natijasiga qarab qo'lda belgilang.
-6. **Sahnalar.** `example_scenes_inflyatsiya.py` andozasi bo'yicha yangi `scenes_YYYYMMDD.py` yozing
+6. **Sahnalar.** `scenes_20261114.py` (yoki `example_scenes_inflyatsiya.py`) andozasi bo'yicha yangi `scenes_YYYYMMDD.py` yozing; sahnalar A–E yuqoridagi Kutilgan/Haqiqat tartibida, A da «KUTILGAN», B da qizil «HAQIQAT» badge
    (`make.py` dan: W,H,LIME,WHITE,GREY,RED, font, glow_text, text_c, base, render). Har abzats = 1 sahna.
    Avval `stills` rejimida kadrlarni ko'ring (matn chetga chiqmasin!), keyin render.
    Shriftlar: /usr/share/fonts/opentype/inter/ (Inter).
